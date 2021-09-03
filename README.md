@@ -5,12 +5,12 @@
 1. Install sent2vec: https://github.com/epfml/sent2vec
 2. Close this repo and run:
 ```
-python setup.py .
+pip install .
 ```
 
 ## Sample usage
 ```python
-from AvaxModel import AvaxModel
+from antivaxxtweetanalyzer.AvaxModel import AvaxModel
 
 consumer_key = ''
 consumer_secret = ''
