@@ -1,6 +1,6 @@
 # Custom Modules
-import Avax_NN
-import DF_from_DICT
+from avatar import Avax_NN
+from avatar import DF_from_DICT
 
 # Py Data Stack
 import numpy as np
