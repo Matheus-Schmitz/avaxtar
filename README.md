@@ -8,7 +8,7 @@
 pip install .
 ```
 3. Download "wiki_unigrams.bin" from: https://drive.google.com/u/0/uc?export=download&confirm=IyJx&id=0B6VhzidiLvjSa19uYWlLUEkzX3c
-4. Place the binary file on C:/Users/<User>/Anaconda3/Lib/site-packages/avatar
+4. Place the binary file on C:/Users/\<User>/Anaconda3/Lib/site-packages/avatar
 
 ## Sample usage
 ```python
