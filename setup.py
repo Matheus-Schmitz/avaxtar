@@ -7,7 +7,7 @@ classifiers = [
 	]
 
 setup(
-	name='antivaxxtweetanalyzer',
+	name='AvaxModel',
 	version='0.0.1',
 	description='Identify if a Twitter account displays anti-vaccine sentiment.',
 	py_modules=["AvaxModel"],
