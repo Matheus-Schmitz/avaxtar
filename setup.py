@@ -7,11 +7,11 @@ classifiers = [
 	]
 
 setup(
-	name='AvaxModel',
+	name='avatar',
 	version='0.0.1',
 	description='Identify if a Twitter account displays anti-vaccine sentiment.',
-	py_modules=["AvaxModel"],
-	#package_dir={'': 'src'},
+	py_modules=["Avatar"],
+	package_dir={'': 'avatar'},
 	author = 'Matheus Schmitz',
 	author_email = 'mschmitz@usc.edu',
 	packages = find_packages(),
