@@ -1,4 +1,5 @@
 # Custom Modules
+import avatar
 from avatar import Avax_NN
 from avatar import DF_from_DICT
 
@@ -18,6 +19,7 @@ import sent2vec
 from glob import glob
 import joblib
 import os
+from pathlib import Path
 from google_drive_downloader import GoogleDriveDownloader as gdd
 
 # Feature Scaling
@@ -57,11 +59,15 @@ class AvaxModel():
             self.api_v2_connection = True
 
         # Load sent2vec model
+        '''
         if not os.path.exists('wiki_unigrams.bin'):
+            curr_dir = Path(avatar.__file__).parent
+            file_path = curr_dir.joinpath('wiki_unigrams.bin')
             #https://drive.google.com/u/0/uc?export=download&confirm=IyJx&id=0B6VhzidiLvjSa19uYWlLUEkzX3c
             gdd.download_file_from_google_drive(file_id='0B6VhzidiLvjSa19uYWlLUEkzX3c',
-                                                dest_path='.',
+                                                dest_path=file_path,
                                                 unzip=True)
+        '''
         self.sent2vec_model = sent2vec.Sent2vecModel()
         self.sent2vec_model.load_model('wiki_unigrams.bin')#, inference_mode=True)
 
