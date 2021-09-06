@@ -58,6 +58,8 @@ class AvaxModel():
             self.headers = {"Authorization": f"Bearer {bearer_token}"}
             self.api_v2_connection = True
 
+        folder_path = os.path.dirname(avatar.__file__)
+
         # Load sent2vec model
         '''
         if not os.path.exists('wiki_unigrams.bin'):
@@ -69,10 +71,10 @@ class AvaxModel():
                                                 unzip=True)
         '''
         self.sent2vec_model = sent2vec.Sent2vecModel()
-        self.sent2vec_model.load_model('wiki_unigrams.bin')#, inference_mode=True)
+        self.sent2vec_model.load_model(folder_path + '/' + 'wiki_unigrams.bin')#, inference_mode=True)
 
         # Load trained scaler
-        self.scaler = joblib.load('scaler1.joblib') 
+        self.scaler = joblib.load(folder_path + '/' + 'scaler1.joblib') 
 
         # Tokenizer
         #self.tknzr = TweetTokenizer(preserve_case=False, reduce_len=False, strip_handles=False)
@@ -101,7 +103,7 @@ class AvaxModel():
                                    optimizer=torch.optim.AdamW, 
                                    loss_fn=nn.BCELoss(), 
                                    device=device)
-            model.load_state_dict(torch.load('model_pytorch1.pt', map_location=torch.device(device)))
+            model.load_state_dict(torch.load(folder_path + '/' + 'model_pytorch1.pt', map_location=torch.device(device)))
             model.eval()
 
             # Send model to the device
