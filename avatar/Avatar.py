@@ -85,7 +85,7 @@ class AvaxModel():
         if self.api_v1_connection:
             # Given a user ID, crawl its last 3000 tweets as a list of dictionaries
             user_timeline = [status._json for status in tweepy.Cursor(self.api.user_timeline, id=userid).items(100)]
-            print(f'User: {userid}. Timeline length: {len(user_timeline)}')
+            #print(f'User: {userid}. Timeline length: {len(user_timeline)}')
 
             # Extract all the features from the list of dictionaries and convert it to a datadframe
             df = DF_from_DICT.main(user_timeline) 
@@ -135,7 +135,7 @@ class AvaxModel():
                     break
 
             list_of_tweets = df_all['text'].to_list()
-            print(f'User: {userid}. Timeline length: {len(list_of_tweets)}')
+            #print(f'User: {userid}. Timeline length: {len(list_of_tweets)}')
 
             pred_proba = self.predict_from_tweets(list_of_tweets)
             return pred_proba
