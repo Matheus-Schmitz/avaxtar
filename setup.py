@@ -15,8 +15,8 @@ setup(
 	author = 'Matheus Schmitz',
 	author_email = 'mschmitz@usc.edu',
 	packages = find_packages(),
-	package_data = {'': ['*.pt', '*.joblib', '*.bin']},
-	data_files = {'': ['*.pt', '*.joblib', '*.bin']},
+	#package_data = {'': ['*.pt', '*.joblib', '*.bin']},
+	#data_files = {'': ['*.pt', '*.joblib', '*.bin']},
 	include_package_data = True,
 	classifiers = classifiers
 	)

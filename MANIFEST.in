@@ -1,6 +1,6 @@
 include *.pt
 inclide *.joblib
-incluide *.bin
+include *.bin
 include avatar/*.pt
 inclide avatar/*.joblib
-incluide avatar/*.bin
+include avatar/*.bin
