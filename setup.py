@@ -28,13 +28,7 @@ setup(
           'tweepy',
           'requests',
           'nltk',
-          'glob',
-          'joblib',
-          'os',
-          'ast',
-          'csv',
           'tqdm',
-          'multiprocessing',
           'sent2vec @ git+ssh://git@github.com/epfml/sent2vec.git'
       ]
 	)
