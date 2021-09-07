@@ -1,4 +1,5 @@
 from setuptools import setup, find_packages
+#import subprocess
 
 classifiers = [
 	'Operating System :: OS Independent',
@@ -18,5 +19,25 @@ setup(
 	#package_data = {'': ['*.pt', '*.joblib', '*.bin']},
 	#data_files = {'': ['*.pt', '*.joblib', '*.bin']},
 	include_package_data = True,
-	classifiers = classifiers
+	classifiers = classifiers,
+	install_requires=[
+          'numpy',
+          'pandas',
+          'torch',
+          'sklearn',
+          'tweepy',
+          'requests',
+          'nltk',
+          'glob',
+          'joblib',
+          'os',
+          'ast',
+          'csv',
+          'tqdm',
+          'multiprocessing',
+          'sent2vec @ git+ssh://git@github.com/epfml/sent2vec.git'
+      ]
 	)
+
+#if name == "__main__":
+#subprocess.run(["pip", "install", "git+https://github.com/epfml/sent2vec.git#egg=sent2vec"], shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
