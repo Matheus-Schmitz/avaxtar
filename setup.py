@@ -29,9 +29,9 @@ setup(
           'requests',
           'nltk',
           'tqdm',
-          'git+ssh://git@github.com/epfml/sent2vec.git'
+          'sent2vec @ git+ssh://git@github.com/epfml/sent2vec.git@master'
       ]
 	)
 
-#if name == "__main__":
+#if name == "__main__":cd 
 #subprocess.run(["pip", "install", "git+https://github.com/epfml/sent2vec.git#egg=sent2vec"], shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
