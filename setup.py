@@ -29,7 +29,7 @@ setup(
           'requests',
           'nltk',
           'tqdm',
-          'sent2vec @ git+ssh://git@github.com/epfml/sent2vec.git@master'
+          'sent2vec @ git+https://github.com/epfml/sent2vec.git@master'
       ]
 	)
 
