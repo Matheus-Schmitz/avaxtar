@@ -1,4 +1,4 @@
-from AvaxModel import AvaxModel
+from avaxtar.AvaxModel import AvaxModel
 
 consumer_key = ''
 consumer_secret = ''

@@ -8,10 +8,10 @@ classifiers = [
 	]
 
 setup(
-	name='avatar',
+	name='avaxtar',
 	version='0.0.1',
 	description='Identify if a Twitter account displays anti-vaccine sentiment.',
-	py_modules=["Avatar",  "Avax_NN", "DF_from_DICT"],
+	py_modules=["Avaxtar",  "Avax_NN", "DF_from_DICT"],
 	#package_dir={'': 'avatar'},
 	author = 'Matheus Schmitz',
 	author_email = 'mschmitz@usc.edu',
