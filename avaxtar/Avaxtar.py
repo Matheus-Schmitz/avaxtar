@@ -1,7 +1,7 @@
 # Custom Modules
-import avatar
-from avatar import Avax_NN
-from avatar import DF_from_DICT
+import avaxtar
+from avaxtar import Avax_NN
+from avaxtar import DF_from_DICT
 
 # Py Data Stack
 import numpy as np
@@ -19,6 +19,7 @@ import sent2vec
 from glob import glob
 import joblib
 import os
+import gdown
 #from google_drive_downloader import GoogleDriveDownloader as gdd
 
 # Feature Scaling
@@ -57,23 +58,20 @@ class AvaxModel():
             self.headers = {"Authorization": f"Bearer {bearer_token}"}
             self.api_v2_connection = True
 
-        self.folder_path = os.path.dirname(avatar.__file__)
+        self.package_path = os.path.dirname(avaxtar.__file__)
 
         # Load sent2vec model
-        '''
-        if not os.path.exists('wiki_unigrams.bin'):
-            curr_dir = Path(avatar.__file__).parent
-            file_path = curr_dir.joinpath('wiki_unigrams.bin')
-            #https://drive.google.com/u/0/uc?export=download&confirm=IyJx&id=0B6VhzidiLvjSa19uYWlLUEkzX3c
-            gdd.download_file_from_google_drive(file_id='0B6VhzidiLvjSa19uYWlLUEkzX3c',
-                                                dest_path=file_path,
-                                                unzip=True)
-        '''
+        if "wiki_unigrams.bin" not in os.listdir(package_path):
+            print("Downloading sent2vec model...")
+            url = 'https://drive.google.com/u/0/uc?id=0B6VhzidiLvjSa19uYWlLUEkzX3c'
+            output = self.package_path + '/wiki_unigrams.bin'
+            gdown.download(url, output, quiet=False)
+
         self.sent2vec_model = sent2vec.Sent2vecModel()
-        self.sent2vec_model.load_model('/' + self.folder_path + '/' + 'wiki_unigrams.bin')#, inference_mode=True)
+        self.sent2vec_model.load_model('/' + self.package_path + '/' + 'wiki_unigrams.bin')#, inference_mode=True)
 
         # Load trained scaler
-        self.scaler = joblib.load(self.folder_path + '/' + 'scaler1.joblib') 
+        self.scaler = joblib.load(self.package_path + '/' + 'scaler1.joblib') 
 
         # Tokenizer
         #self.tknzr = TweetTokenizer(preserve_case=False, reduce_len=False, strip_handles=False)
@@ -102,7 +100,7 @@ class AvaxModel():
                                    optimizer=torch.optim.AdamW, 
                                    loss_fn=nn.BCELoss(), 
                                    device=device)
-            model.load_state_dict(torch.load(self.folder_path + '/' + 'model_pytorch1.pt', map_location=torch.device(device)))
+            model.load_state_dict(torch.load(self.package_path + '/' + 'model_pytorch1.pt', map_location=torch.device(device)))
             model.eval()
 
             # Send model to the device
@@ -160,7 +158,7 @@ class AvaxModel():
                                optimizer=torch.optim.AdamW, 
                                loss_fn=nn.BCELoss(), 
                                device=device)
-        model.load_state_dict(torch.load(self.folder_path + '/' + 'model_pytorch1.pt', map_location=torch.device(device)))
+        model.load_state_dict(torch.load(self.package_path + '/' + 'model_pytorch1.pt', map_location=torch.device(device)))
         model.eval()
 
         # Send model to the device
