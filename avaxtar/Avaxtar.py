@@ -80,6 +80,7 @@ class AvaxModel():
         
     def predict_from_userid_api_v1(self, userid):
         if self.api_v1_connection:
+
             # Given a user ID, crawl its last 3000 tweets as a list of dictionaries
             user_timeline = [status._json for status in tweepy.Cursor(self.api.user_timeline, id=userid).items(100)]
             #print(f'User: {userid}. Timeline length: {len(user_timeline)}')
@@ -115,6 +116,15 @@ class AvaxModel():
     
     def predict_from_userid_api_v2(self, userid):
         if self.api_v2_connection:
+
+            # If a screen name was passed, convert to user id
+            if str(userid).isdigit() == False:
+                if self.api_v1_connection: 
+                    userid = self.api.get_user(userid)
+                else:
+                    print("The input is not an user id. If you are trying to predict from a screen name, please connect to the v1 api.")
+                    break
+
             # Df to store user tweets 
             df_all = pd.DataFrame()
             
