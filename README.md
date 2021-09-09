@@ -16,6 +16,9 @@ model.predict_from_userid_api_v2(userid)
 
 
 ## Installation
+
+Attention: this package relies on a pre-trained embedding model from sent2vec, with a size of 5 GB. The model will be automatically downloaded when the package is first instanced on a python script, and will then be saved on the package directory for future usage.
+
 1. Clone this repo:
 ```
 git clone https://github.com/Matheus-Schmitz/avaxtar.git
