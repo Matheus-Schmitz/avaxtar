@@ -1,18 +1,19 @@
-# AVATAR: Anti-VAxx Tweet AnalyzeR
+# AVAXTAR: Anti-VAXx Tweet AnalyzeR
+
+AVAXTAR is a pretrained neural network pipeline that takes the screen name or user id of a twitter account, and returns how similar that user's tweets are in relation to tweets from anti-vaccine users.
+The model was trained on 100GB of autolabeled twitter data, and outputs a list of probabilities associated with [not anti-vaccine, anti-vaccine].
 
 
 ## Installation
-1. Install sent2vec: https://github.com/epfml/sent2vec
-2. Close this repo and run:
+1. Clone this repo.
+2. From the root folder run:
 ```
 pip install .
 ```
-3. Download "wiki_unigrams.bin" from: https://drive.google.com/u/0/uc?export=download&confirm=IyJx&id=0B6VhzidiLvjSa19uYWlLUEkzX3c
-4. Place the binary file on C:/Users/\<User>/Anaconda3/Lib/site-packages/avatar
 
 ## Sample usage
 ```python
-from avatar import Avatar
+from avaxtar import Avaxtar
 
 consumer_key = ''
 consumer_secret = ''
@@ -27,7 +28,7 @@ if __name__ == "__main__":
 	userid = ''
 
 	# Predict
-	model = Avatar.AvaxModel(consumer_key, consumer_secret, access_token, access_secret, bearer_token)
+	model = Avaxtar.AvaxModel(consumer_key, consumer_secret, access_token, access_secret, bearer_token)
 	pred_proba = model.predict_from_userid_api_v1(userid)
 
 	# Results
