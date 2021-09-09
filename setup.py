@@ -31,11 +31,11 @@ setup(
           'tqdm > 4.50.0',
           'gdown == 3.10.1',
           #'sent2vec @ git+https://github.com/epfml/sent2vec.git@v1#egg=sent2vec',
-          #'sent2vec @ git+https://github.com/epfml/sent2vec.git',
-          'sent2vec @ git+ssh://git@github.com/example_org/sent2vec.git'
+          'sent2vec @ git+https://github.com/epfml/sent2vec.git',
+          #'sent2vec @ git+ssh://git@github.com/example_org/sent2vec.git'
           #'sent2vec==0.0.0'
       ],
-     dependency_links = ['http://github.com/epfml/sent2vec/tarball/master#egg=sent2vec']
+     #dependency_links = ['http://github.com/epfml/sent2vec/tarball/master#egg=sent2vec']
 	)
 
 #if name == "__main__":cd 
