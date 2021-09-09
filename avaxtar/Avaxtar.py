@@ -120,7 +120,8 @@ class AvaxModel():
             # If a screen name was passed, convert to user id
             if str(userid).isdigit() == False:
                 if self.api_v1_connection: 
-                    userid = self.api.get_user(userid)
+                    user = self.api.get_user(userid)
+                    userid = user.id_str
                     print(f"Converted user id {userid}")
                 else:
                     raise ValueError("The input is not an user id. If you are trying to predict from a screen name, please connect to the v1 api.")
