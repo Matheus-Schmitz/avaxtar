@@ -122,8 +122,7 @@ class AvaxModel():
                 if self.api_v1_connection: 
                     userid = self.api.get_user(userid)
                 else:
-                    print("The input is not an user id. If you are trying to predict from a screen name, please connect to the v1 api.")
-                    break
+                    raise ValueError("The input is not an user id. If you are trying to predict from a screen name, please connect to the v1 api.")
 
             # Df to store user tweets 
             df_all = pd.DataFrame()
