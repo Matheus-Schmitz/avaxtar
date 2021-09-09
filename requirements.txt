@@ -1,0 +1,2 @@
+sent2vec @ git+https://github.com/epfml/sent2vec.git
+git+git://github.com/epfml/sent2vec.git@master#egg=sent2vec

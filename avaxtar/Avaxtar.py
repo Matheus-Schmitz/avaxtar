@@ -61,7 +61,7 @@ class AvaxModel():
         self.package_path = os.path.dirname(avaxtar.__file__)
 
         # Load sent2vec model
-        if "wiki_unigrams.bin" not in os.listdir(package_path):
+        if "wiki_unigrams.bin" not in os.listdir(self.package_path):
             print("Downloading sent2vec model...")
             url = 'https://drive.google.com/u/0/uc?id=0B6VhzidiLvjSa19uYWlLUEkzX3c'
             output = self.package_path + '/wiki_unigrams.bin'

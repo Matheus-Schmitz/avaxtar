@@ -9,7 +9,7 @@ classifiers = [
 
 setup(
 	name='avaxtar',
-	version='0.0.3',
+	version='0.0.10',
 	description='Identify if a Twitter account displays anti-vaccine sentiment.',
 	py_modules=["Avaxtar",  "Avax_NN", "DF_from_DICT"],
 	#package_dir={'': 'avatar'},
@@ -21,17 +21,19 @@ setup(
 	include_package_data = True,
 	classifiers = classifiers,
 	install_requires=[
-          'numpy',
-          'pandas',
-          'torch',
-          'scikit-learn',
-          'tweepy',
-          'requests',
-          'nltk',
-          'tqdm',
-          'gdown'
-          #'sent2vec @ git+https://github.com/epfml/sent2vec.git@master#egg=sent2vec'
-          #'sent2vec'
+          'numpy >= 1.18.0, < 1.23.0',
+          'pandas >= 1.3.0, < 1.4.0',
+          'torch >= 1.8.0, < 1.9.0',
+          'scikit-learn >= 0.24.0, > 1.0.0',
+          'tweepy == 3.8.0',
+          'requests >= 2.20.0, < 2.26.0',
+          'nltk == 3.5',
+          'tqdm > 4.50,0',
+          'gdown == 3.10.1',
+          #'sent2vec @ git+https://github.com/epfml/sent2vec.git@v1#egg=sent2vec',
+          #'sent2vec @ git+https://github.com/epfml/sent2vec.git',
+          'sent2vec @ git+ssh://git@github.com/example_org/sent2vec.git'
+          #'sent2vec==0.0.0'
       ],
      dependency_links = ['http://github.com/epfml/sent2vec/tarball/master#egg=sent2vec']
 	)
