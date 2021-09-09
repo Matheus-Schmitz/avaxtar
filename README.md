@@ -16,8 +16,15 @@ model.predict_from_userid_api_v2(userid)
 
 
 ## Installation
-1. Clone this repo.
-2. From the root folder run:
+1. Clone this repo:
+```
+git clone https://github.com/Matheus-Schmitz/avaxtar.git
+```
+2. Go to the repo's root:
+```
+cd avaxtar/
+```
+3. Install with pip:
 ```
 pip install .
 ```
