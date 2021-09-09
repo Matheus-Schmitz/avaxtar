@@ -28,7 +28,7 @@ setup(
           'tweepy == 3.8.0',
           'requests >= 2.20.0, < 2.26.0',
           'nltk == 3.5',
-          'tqdm > 4.50,0',
+          'tqdm > 4.50.0',
           'gdown == 3.10.1',
           #'sent2vec @ git+https://github.com/epfml/sent2vec.git@v1#egg=sent2vec',
           #'sent2vec @ git+https://github.com/epfml/sent2vec.git',
