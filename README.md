@@ -33,7 +33,7 @@ After model training, we identify the optimal classification threshold to be use
 | PRC-AUC   | 0.8427         | 0.9677   		|
 | Precision | 0.8675         | 0.8675      		|
 | Recall    | 0.8680         | 0.8680   		|
-| F1   		| 0.8677         | 0.878      		|
+| F1   		| 0.8677         | 0.8678     		|
 
 
 
