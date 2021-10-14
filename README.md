@@ -56,7 +56,7 @@ pip install .
 ```
 
 
-## Sample usage
+## Usage Example
 
 For prediction, use:
 ```python
