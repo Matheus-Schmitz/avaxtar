@@ -1,3 +1,4 @@
+<style>body {text-align: justify}</style>
 # AVAXTAR: Anti-VAXx Tweet AnalyzeR
 
 <p style='text-align: justify;'> 
