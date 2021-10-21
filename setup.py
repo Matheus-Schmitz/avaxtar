@@ -9,7 +9,7 @@ classifiers = [
 
 setup(
 	name='avaxtar',
-	version='0.0.12',
+	version='0.0.13',
 	description='Identify if a Twitter account displays anti-vaccine sentiment.',
 	py_modules=["Avaxtar",  "Avax_NN", "DF_from_DICT"],
 	#package_dir={'': 'avatar'},

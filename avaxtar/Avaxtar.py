@@ -134,7 +134,9 @@ class AvaxModel():
             while df_all.shape[0] < 100:
                 response = self.make_request(self.headers, userid, pagination_token)       
                 if 'data' not in response:
+                    print("Server did not respond with data. Please check the error code:")
                     print(response)
+                    break
                 df = pd.DataFrame(response['data'])
                 df_all = pd.concat((df_all, df))
                 try:
