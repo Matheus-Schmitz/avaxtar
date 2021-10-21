@@ -85,7 +85,6 @@ We then enlarge the number of negative samples, by gathering the tweets from acc
 After model training, we identify the optimal classification threshold to be used, based on maximizing F1 score on the validation set. We find that a threshold of 0.5938 results in the best F1 Score, and thus recommend the usage of that threshold instead of the default threshold of 0.5. Using the optimized threshold, the resulting modelwas then evaluated on a test set of users, achieving the reasonable scores, as shown in the table below.
 </p>
 
-<p align="center">
 | Metric    | Negative Class | Positive Class 	|
 | ---:      |    :----:      |        :---:   	|
 | Accuracy  | 0.8680 		 | 0.8680   		|
@@ -94,4 +93,3 @@ After model training, we identify the optimal classification threshold to be use
 | Precision | 0.8675         | 0.8675      		|
 | Recall    | 0.8680         | 0.8680   		|
 | F1   		| 0.8677         | 0.8678     		|
-</p>
