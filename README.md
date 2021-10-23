@@ -10,7 +10,7 @@ AVAXTAR was trained on 100GB of autolabeled twitter data. The methodology behind
 
 <p style='text-align: justify;'> 
 If you use this code, please cite this paper:
-
+```
 @article{Schmitz2021,
 arxivId = {2110.11333},
 author = {Schmitz, Matheus and Muri{\'{c}}, Goran and Burghardt, Keith},
@@ -20,8 +20,8 @@ title = {{A Python Package to Detect Anti-Vaccine Users on Twitter}},
 url = {https://arxiv.org/abs/2110.11333v1},
 year = {2021}
 }
+```
 
-</p>
 
 ## Installation
 
@@ -58,7 +58,9 @@ For example:
 ```python
 from avaxtar import Avaxtar
 
-# The package supports both Twitter API v1 and v2. If using API v1, it requires the consumer key, consumer secret, access token and access secret. For API v2 it requires only a bearer token (If using only bearer token it accepts only userID as an input, not a screen name. In order to use screen name with API v2, API v1 keys must be passed to the model)
+# The package supports both Twitter API v1 and v2. If using API v1, it requires the consumer key, consumer secret, access token and access secret. 
+# For API v2 it requires only a bearer token (If using only bearer token it accepts only userID as an input, not a screen name. In order to use 
+# screen name with API v2, API v1 keys must be passed to the model)
 
 consumer_key = ''
 consumer_secret = ''
