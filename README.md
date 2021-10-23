@@ -3,8 +3,6 @@
 <p style='text-align: justify;'> 
 AVAXTAR is a python package to identify anti-vaccine users on Twitter. The model takes a username or userID as an input and returns the probability of a user being susceptible to anti-vaccine narratives (likely to share the anti-vaccine content in the near future). The complimentary probabilities are returned in the following format: [not anti-vaccine, anti-vaccine].
 
-The package supports both Twitter API v1 and v2. If using API v1, it requires the consumer key, consumer secret, access token and access secret. For API v2 it requires only a bearer token (If using only bearer token it accepts only userID as an input, not a screen name. In order to use screen name with API v2, API v1 keys must be passed to the model)
-
 AVAXTAR was trained on 100GB of autolabeled twitter data. The methodology behind the package is described in full at https://arxiv.org/abs/2110.11333
 </p>
 
@@ -59,6 +57,8 @@ model.predict_from_userid_api_v2(userid)
 For example:
 ```python
 from avaxtar import Avaxtar
+
+# The package supports both Twitter API v1 and v2. If using API v1, it requires the consumer key, consumer secret, access token and access secret. For API v2 it requires only a bearer token (If using only bearer token it accepts only userID as an input, not a screen name. In order to use screen name with API v2, API v1 keys must be passed to the model)
 
 consumer_key = ''
 consumer_secret = ''
