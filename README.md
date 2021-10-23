@@ -9,7 +9,8 @@ AVAXTAR was trained on 100GB of autolabeled twitter data. The methodology behind
 ## Citation
 
 <p style='text-align: justify;'> 
-If you use this code, please cite this paper:
+If you use this code, please cite the following paper:
+	
 ```
 @article{Schmitz2021,
 arxivId = {2110.11333},
@@ -21,6 +22,7 @@ url = {https://arxiv.org/abs/2110.11333v1},
 year = {2021}
 }
 ```
+
 
 
 ## Installation
