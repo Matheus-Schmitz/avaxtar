@@ -2,18 +2,28 @@
 # AVAXTAR: Anti-VAXx Tweet AnalyzeR
 
 <p style='text-align: justify;'> 
-AVAXTAR is a python package to identify anti-vaccine users on twitter. The model outputs complimentary probabilities for [not anti-vaccine, anti-vaccine]. AVAXTAR was trained on 100GB of autolabeled twitter data.
+AVAXTAR is a python package to identify anti-vaccine users on Twitter. The model takes a username or userID as an input and returns complimentary probabilities for [not anti-vaccine, anti-vaccine]. 
 
-The model supports both Twitter API v1 and v2. To predict with v1, the user needs its consumer key, consumer secret, access token and access secret. The v2 requires only a bearer token, but it can only predict based on user id, not on screen name. Predicting from the v2 api using screen name is only possible if v1 keys are passed to the model. 
+The model supports both Twitter API v1 and v2. If using API v1, it requires the consumer key, consumer secret, access token and access secret. For API v2 it requires only a bearer token (If using only bearer token it accepts only userID as an input, not a screen name. In order to use screen name with API v2, API v1 keys must be passed to the model)
 
-The methodology behind the package is described in full at {placeholder}
+AVAXTAR was trained on 100GB of autolabeled twitter data. The methodology behind the package is described in full at https://arxiv.org/abs/2110.11333
 </p>
 
 ## Citation
 
 <p style='text-align: justify;'> 
-To cite this paper, please use:
-{placeholder}
+If you use this code, please cite this paper:
+
+@article{Schmitz2021,
+arxivId = {2110.11333},
+author = {Schmitz, Matheus and Muri{\'{c}}, Goran and Burghardt, Keith},
+eprint = {2110.11333},
+month = {oct},
+title = {{A Python Package to Detect Anti-Vaccine Users on Twitter}},
+url = {https://arxiv.org/abs/2110.11333v1},
+year = {2021}
+}
+
 </p>
 
 ## Installation
