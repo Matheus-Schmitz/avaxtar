@@ -1,7 +1,7 @@
 # AVAXTAR: Anti-VAXx Tweet AnalyzeR
 
 <p style='text-align: justify;'> 
-AVAXTAR is a python package to identify anti-vaccine users on Twitter. The model takes a username or userID as an input and returns the probability of a user being susceptible to anti-vaccine narratives (likely to share the anti-vaccine content in the near future). The complimentary probabilities are returned in the following format: [not anti-vaccine, anti-vaccine].
+AVAXTAR is a python package to identify anti-vaccine users on Twitter. The model takes a username or userID as an input and returns the probability of a user being susceptible to anti-vaccine narratives (likely to share the anti-vaccine content in the past or in the near future). The complimentary probabilities are returned in the following format: [not anti-vaccine, anti-vaccine].
 
 AVAXTAR was trained on 100GB of autolabeled twitter data. The methodology behind the data collection and model training	is described in details at https://arxiv.org/abs/2110.11333
 </p>
