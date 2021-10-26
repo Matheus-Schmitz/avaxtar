@@ -63,7 +63,8 @@ class AvaxModel():
         # Load sent2vec model
         if "wiki_unigrams.bin" not in os.listdir(self.package_path):
             print("Downloading sent2vec model...")
-            url = 'https://drive.google.com/u/0/uc?id=0B6VhzidiLvjSa19uYWlLUEkzX3c'
+            #url = 'https://drive.google.com/u/0/uc?id=0B6VhzidiLvjSa19uYWlLUEkzX3c'
+            url = 'https://drive.google.com/uc?id=1f_XhwJvJek5qXQUlODHqBidcxqJpw0IW'
             output = self.package_path + '/wiki_unigrams.bin'
             gdown.download(url, output, quiet=False)
 
