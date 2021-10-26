@@ -1,25 +1,34 @@
-<style>body {text-align: justify}</style>
 # AVAXTAR: Anti-VAXx Tweet AnalyzeR
 
 <p style='text-align: justify;'> 
-AVAXTAR is a python package to identify anti-vaccine users on twitter. The model outputs complimentary probabilities for [not anti-vaccine, anti-vaccine]. AVAXTAR was trained on 100GB of autolabeled twitter data.
+AVAXTAR is a python package to identify anti-vaccine users on Twitter. The model takes a username or userID as an input and returns the probability of a user being susceptible to anti-vaccine narratives (likely to share the anti-vaccine content in the past or in the near future). The complimentary probabilities are returned in the following format: [not anti-vaccine, anti-vaccine].
 
-The model supports both Twitter API v1 and v2. To predict with v1, the user needs its consumer key, consumer secret, access token and access secret. The v2 requires only a bearer token, but it can only predict based on user id, not on screen name. Predicting from the v2 api using screen name is only possible if v1 keys are passed to the model. 
-
-The methodology behind the package is described in full at {placeholder}
+AVAXTAR was trained on 100GB of autolabeled twitter data. The methodology behind the data collection and model training	is described in details at https://arxiv.org/abs/2110.11333
 </p>
 
 ## Citation
 
 <p style='text-align: justify;'> 
-To cite this paper, please use:
-{placeholder}
-</p>
+If you use this code, please cite the following paper:
+	
+```
+@article{Schmitz2021,
+arxivId = {2110.11333},
+author = {Schmitz, Matheus and Muri{\'{c}}, Goran and Burghardt, Keith},
+eprint = {2110.11333},
+month = {oct},
+title = {{A Python Package to Detect Anti-Vaccine Users on Twitter}},
+url = {https://arxiv.org/abs/2110.11333v1},
+year = {2021}
+}
+```
+
+
 
 ## Installation
 
 <p style='text-align: justify;'> 
-Attention: this package relies on a pre-trained embedding model from sent2vec, with a size of 5 GB. The model will be automatically downloaded when the package is first instanced on a python script, and will then be saved on the package directory for future usage.
+Attention: this package relies on a pre-trained embedding model from sent2vec (approx. 5GB). The model will be automatically downloaded when the package is first instanced in a python script, and will then be saved on the package directory for future usage.
 </p>
 
 1. Clone this repo:
@@ -51,6 +60,10 @@ For example:
 ```python
 from avaxtar import Avaxtar
 
+# The package supports both Twitter API v1 and v2. If using API v1, it requires the consumer key, consumer secret, access token and access secret. 
+# For API v2 it requires only a bearer token (If using only bearer token it accepts only userID as an input, not a screen name. In order to use 
+# screen name with API v2, API v1 keys must be passed to the model)
+
 consumer_key = ''
 consumer_secret = ''
 access_token = ''
@@ -80,8 +93,7 @@ The AVAXTAR classifier is trained on a comprehensive labeled dataset that contai
 
 Collecting positive samples: Positive samples are gathered through a snowball method to identify a set of hashtags and keywords associated with the anti-vaccination movement, and then queried the Twitter API and collected the historical tweets of accounts that used any of the identified keywords. 
 
-Collecting negative samples: To collect the negative samples, we first performed a mirror approach the positive samples and queried the Twitter API to get historical tweets of accounts that do not use any of the predefined keywords and hashtags.
-We then enlarge the number of negative samples, by gathering the tweets from accounts that are likely proponents of the vaccination. We identify the pro-ponents of the vaccines in the following way: First, we identify the set of twenty most prominent doctors and health experts active on Twitter. Then collected the covid-related Lists those health experts made on Twitter. From those lists, we collected approximately one thousand Twitter handles of prominent experts and doctors who tweet about the coronavirus and the pandemic. In the next step, we go through their latest 200 tweets and collected the Twitter handles of users who retweeted their tweets. That became our pool of pro-vaccine users. Finally, we collected the historical tweets of users from the pro-vaccine pool.
+Collecting negative samples: To collect the negative samples, we first performed a mirror approach the positive samples and queried the Twitter API to get historical tweets of accounts that do not use any of the predefined keywords and hashtags. We then enlarge the number of negative samples, by gathering the tweets from accounts that are likely proponents of the vaccination. For more details about the data collection methods, please refer to: https://arxiv.org/pdf/2110.11333.pdf
 
 After model training, we identify the optimal classification threshold to be used, based on maximizing F1 score on the validation set. We find that a threshold of 0.5938 results in the best F1 Score, and thus recommend the usage of that threshold instead of the default threshold of 0.5. Using the optimized threshold, the resulting modelwas then evaluated on a test set of users, achieving the reasonable scores, as shown in the table below.
 </p>
