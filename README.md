@@ -95,7 +95,7 @@ Collecting positive samples: Positive samples are gathered through a snowball me
 
 Collecting negative samples: To collect the negative samples, we first performed a mirror approach the positive samples and queried the Twitter API to get historical tweets of accounts that do not use any of the predefined keywords and hashtags. We then enlarge the number of negative samples, by gathering the tweets from accounts that are likely proponents of the vaccination. For more details about the data collection methods, please refer to: https://arxiv.org/pdf/2110.11333.pdf
 
-After model training, we identify the optimal classification threshold to be used, based on maximizing F1 score on the validation set. We find that a threshold of 0.5938 results in the best F1 Score, and thus recommend the usage of that threshold instead of the default threshold of 0.5. Using the optimized threshold, the resulting modelwas then evaluated on a test set of users, achieving the reasonable scores, as shown in the table below.
+After model training, we identify the optimal classification threshold to be used, based on maximizing F1 score on the validation set. We find that a threshold of 0.5729 results in the best F1 Score, and thus recommend the usage of that threshold instead of the default threshold of 0.5. Using the optimized threshold, the resulting modelwas then evaluated on a test set of users, achieving the reasonable scores, as shown in the table below.
 </p>
 
 | Metric    | Negative Class | Positive Class 	|
